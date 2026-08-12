@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-08-12, 11:58 a.m.
+# Technique   iterative-cycle-simulation
+# Time        O(n)
+# Space       O(1)
+# Insight     The tree height updates by doubling during odd-numbered cycles and incrementing by one during even-numbered cycles, starting from an initial height of one at cycle zero.
+# Interview   Before: "I could use a mathematical formula to calculate the height based on parity." After: "I implemented an iterative simulation that runs in O(n) time, correctly handling the base case where n equals zero by returning the initial height of one."
+# Pitfalls    (1) Misinterpreting the cycle parity by assuming spring is even instead of odd.  (2) Failing to handle the n equals zero case, which returns the initial height of one.  (3) Incorrectly initializing the loop range, leading to an extra or missing growth cycle.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
