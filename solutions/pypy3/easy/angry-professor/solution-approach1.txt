@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-08-12, 12:12 p.m.
+# Technique   linear-scan-counter
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm counts the number of students with non-positive arrival times and compares this total against the threshold k to determine if the class proceeds.
+# Interview   Before: "I would sort the array to find the cutoff point." After: "Sorting is unnecessary because we only need to count students with arrival times less than or equal to zero, which is an O(n) operation that handles the threshold k efficiently."
+# Pitfalls    (1) Confusing the threshold k with the number of late students instead of the required number of on-time attendees.  (2) Incorrectly treating zero as a late arrival time, violating the rule that non-positive values indicate on-time arrival.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
